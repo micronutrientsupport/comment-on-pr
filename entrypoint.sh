@@ -22,7 +22,7 @@ message = ARGV[0]
 check_duplicate_msg = ARGV[1]
 repo = event["repository"]["full_name"]
 
-if ENV.fetch("GITHUB_EVENT_NAME") == "pull_request"
+if ENV.fetch("GITHUB_EVENT_NAME") == "pull_request" || ENV.fetch("GITHUB_EVENT_NAME") == "pull_request_target"
   pr_number = event["number"]
 else
   pulls = github.pull_requests(repo, state: "open")
