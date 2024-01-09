@@ -7,6 +7,7 @@ LABEL "com.github.actions.maintainer"="Aaron Klaassen <aaron@unsplash.com>"
 LABEL "com.github.actions.icon"="message-square"
 LABEL "com.github.actions.color"="blue"
 
+RUN gem install faraday-net_http -v 3.0.2
 RUN gem install octokit -v 4.25.1
 
 ADD entrypoint.sh /entrypoint.sh
